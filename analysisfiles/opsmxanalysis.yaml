@@ -4,7 +4,7 @@ metadata:
   name: opsmx-provider-config2
 data:
   providerConfig: |
-    application: testforjob
+    application: test411
     lifetimeMinutes: 3
     intervalTime: 3
     lookBackType: sliding
