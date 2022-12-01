@@ -4,7 +4,7 @@ metadata:
   name: opsmx-provider-config2
 data:
   providerConfig: |
-    application: test411
+    application: test41
     lifetimeMinutes: 3
     intervalTime: 3
     lookBackType: sliding
@@ -15,7 +15,7 @@ data:
       baselineMetricScope: "isd-argofull,{{env.STABLE_POD_HASH}},testanalysis"
       canaryMetricScope: "isd-argofull,{{env.LATEST_POD_HASH}},testanalysis"
       metricTemplateName: "metrixtemplates"
-    - logTemplateName: logtemplate11
+    - logTemplateName:  stacklog 
       logScopeVariables: "kubernetes.pod_name"
       baselineLogScope: ".*{{env.STABLE_POD_HASH}}.*"
       canaryLogScope: ".*{{env.LATEST_POD_HASH}}.*"
