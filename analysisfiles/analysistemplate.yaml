@@ -47,9 +47,9 @@ spec:
                   projected:
                     sources:
                     - configMap:
-                        name: metrixtemplates2
+                        name:  prometheusmetric25 
                     - configMap:
-                        name: logtemplate11
+                        name:  stacklog 
                 - name: secret-config-volume
                   secret:
                     secretName: opsmx-profile
