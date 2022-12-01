@@ -5,6 +5,7 @@ metadata:
 data:
  Elk : |
      {
+     
   "templateName": "Elk",
   "monitoringProvider": "ELASTICSEARCH",
   "scoringAlgorithm": "Canary",
