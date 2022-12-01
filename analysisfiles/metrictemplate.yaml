@@ -4,27 +4,33 @@ metadata:
   name: prometheusmetric25 
 data:
   metrixtemplates: |
-    {
-    "filterKey": "${namespace_key},${pod_key},${app_name}",
-    "data": {
+   {
+  "filterKey": "${namespace_key},${pod_key},${app_name}",
+  "data": {
     "percent_diff_threshold": "hard",
     "isNormalize": false,
-      "groups": [
+    "groups": [
       {
         "metrics": [
           {
             "metricType": "ADVANCED",
-            "accountName": "isd312-saas-prom",
+            "metricWeight": 1,
+            "nanStrategy": "Remove",
+            "accountName": "prometheus-25",
             "riskDirection": "HigherOrLower",
-            "customThresholdHigher": 100,
-            "customThresholdLower": 100,
-            "name": "sum(container_memory_usage_bytes{namespace=\"${namespace_key}\", pod=~\".*${pod_key}.*\"})"
+            "customThresholdHigher": "10",
+            "name": "sum(rate(container_cpu_usage_seconds_total{namespace=\"${namespace_key}\", pod=~\".*${pod_key}.*\", container!=\"\"}[1m]))",
+            "criticality": "Normal",
+            "customThresholdLower": "10",
+            "watchlist": false
           }
         ],
-        "group": "Memory Usage By Pod Name"
+        "group": "query1"
       }
     ]
-    },
-    "templateName": "metrixtemplates",
-    "advancedProvider": "PROMETHEUS"
-    }
+  },
+  "templateName": "prometheusmetric25",
+  "isEdit": false,
+  "advancedProvider": "PROMETHEUS",
+  "versionNo": "v1.0"
+}
